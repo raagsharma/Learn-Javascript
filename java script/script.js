@@ -122,5 +122,35 @@ switch(job){
 
 
 }
+// challenge 2
+var johnteamG1=89;
+var johnteamG2=120;
+var johnteamG3=103;
+var johnteamavg= (johnteamG1+johnteamG2+johnteamG3)/2;
+console.log(johnteamavg);
 
 
+var markteamG1=116;
+var markteamG2=94;
+var markteamG3=123;
+var markteamavg=(markteamG1+markteamG2+markteamG3)/2;
+console.log(markteamavg);
+
+if(johnteamavg>markteamavg){
+ console.log('john wins the basketball match with scores'+ johnteamavg);
+}
+else if(markteamavg>johnteamavg)
+{
+    console.log('mark wins the basketball match with scores'+ markteamavg );
+
+}
+else{
+    console.log('there is a draw');
+}
+
+
+//FUNCTIONS
+
+function calculateage(birthyear){
+    return 2018-birthyear;
+}

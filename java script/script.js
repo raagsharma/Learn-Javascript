@@ -151,6 +151,139 @@ else{
 
 //FUNCTIONS
 
-function calculateage(birthyear){
+
+function calculateAge(birthyear){
     return 2018-birthyear;
 }
+var ageJohn=calculateAge(1990);
+var ageMark=calculateAge(1998);
+var ageMike=calculateAge(1969);
+
+
+console.log(ageJohn,ageMark,ageMike);
+
+function yearuntilRetirement(year,firstname){
+
+    var age=calculateAge(year);
+    var retirement=65-age;
+    if(retirement>0){
+    console.log(firstname +' retires in '+ retirement + ' years');
+}else
+{console.log(firartname+ ' retired already ');}
+
+}
+
+yearuntilRetirement(1990, 'John');
+yearuntilRetirement(1998,'Mark');
+yearuntilRetirement(1969,'Mike');
+
+//function declaration
+
+//function whatDoYouDo(job,firstname){}
+
+//function expression
+var whatDoYouDo=function(job, firstname){
+    switch(job){
+        case 'teacher':
+            return firstname + '  teaches coding in school';
+        case 'driver':
+            return firstname +' drives uber';
+            case 'designer':
+                return firstname +' designs beautiful websites';
+                default:
+                    return firstname + ' does something else';
+    }
+}
+
+console.log(whatDoYouDo('teacher',' John'));
+console.log(whatDoYouDo('driver','Mike'));
+console.log(whatDoYouDo('designer','Mark'));
+
+//arrays
+
+//initialization of new array
+var names=['John', 'Mark','Jane'];
+var years=new Array('1990','1969','1948');
+
+console.log(names[2]);
+console.log(names.length);
+
+//mutate array data
+names[1]='ben';
+names[names.length]='Mary';
+console.log(names);
+
+//different type of data
+var john=['John','Smith',1990,'designer',false];
+john.push('blue');
+john.unshift('Mr.');
+console.log(john);
+
+john.pop();
+john.shift();
+console.log(john);
+
+console.log(john.indexOf(1990));
+
+var isDesigner = john.indexOf('designer')=== -1? 'john is not a designer':'john is a designer';
+console.log(isDesigner);
+
+//challenge 3
+
+function tipCalculator(bill){
+    var percentage;
+    if(bill<50){
+        percentage=.2;
+
+    }else if(bill>=50 && bill<200)
+    {
+percentage=.15;
+    }else{
+        percentage=.1;
+    }
+    return percentage*bill;
+}
+var bills=[124,48,168];
+var tips=[tipCalculator(bills[0]),
+           tipCalculator(bills[1]),
+        tipCalculator(bills[2])];
+
+        var finalvalues=[bills[0]+tips[0],
+                        bills[1]+tips[1],
+                    bills[2]+tips[2]];      
+
+                    
+
+                    console.log(tips,finalvalues);
+
+
+
+/******** objects */
+
+//object literal
+var john={
+    firstname:'john',
+    lastname:'smith',
+    birthyear: 1990,
+    family:['jane','mark','bob','emily'],
+    job:'teacher',
+    isMarried: false
+
+
+};
+
+console.log(john.firstname);
+console.log(john['lastname']);
+var x='birthyear';
+console.log(john[x]);
+
+john.job='designer';
+john['isMarried']=true;
+console.log(john);
+
+//new object syntax
+var jane=new Object();
+jane.firstname='jane';
+jane.birthyear=1969;
+jane['lastname']='smith';
+console.log(jane);

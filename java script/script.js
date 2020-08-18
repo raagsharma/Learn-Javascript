@@ -270,9 +270,99 @@ john.job = "designer";
 john["isMarried"] = true;
 console.log(john);
 
+
 //new object syntax
 var jane = new Object();
 jane.firstname = "jane";
 jane.birthyear = 1969;
-jane["lastname"] = "smith";
+jane['lastname'] = "smith";
 console.log(jane);
+
+
+/***************objects methods */
+
+var john = {
+    firstname: "john",
+    lastname: "smith",
+    birthyear: 1990,
+    family: ["jane", "mark", "bob", "emily"],
+    job: "teacher",
+    isMarried: false,
+    calcAge:function(){
+
+        this.age=2018-this.birthyear;
+    }
+};
+
+john.calcAge();
+console.log(john);
+
+//challenge 4
+
+var Mark={
+    fullName:'MarkJohnson',
+    height:1.7,
+    mass:75,
+    calBMI:function(){
+        Mark.BMI=this.mass/(this.height*this.height);
+        return this.BMI;
+    }
+};
+
+var John={
+    fullName:'JohnSmith',
+    height:1.5,
+    mass:80,
+    calBMI:function(){
+        John.BMI=this.mass/(this.height*this.height);
+        return this.BMI;
+    }
+};
+
+John.calBMI();
+console.log(John.BMI);
+
+Mark.calBMI();
+console.log(Mark.BMI);
+
+
+var maxBMI = Mark.BMI > John.BMI;
+console.log("Is Mark BMI more than John BMI?" + maxBMI);
+
+/*********loops */
+
+
+for(var i =0;i<10;i++){
+    console.log(i);
+}
+
+
+
+var john = ["John", "Smith", 1990, "designer", false];
+for(var i=0;i<john.length;i++){
+    console.log(john[i]);
+}
+
+
+//while loop
+
+var i=0;
+while(i<john.length){
+    console.log(john[i]);
+    i++;
+}
+
+//continue and braek statments
+
+var john = ["John", "Smith", 1990, "designer", false];
+for (var i=0;i<john.length;i++){
+    if(typeof john[i]  !=='string')continue;
+    console.log(john[i]);
+}
+
+
+//looping baackward
+
+for(i=john.length-1;i>0;i--){
+    console.log(john[i]);
+}
